@@ -606,46 +606,109 @@ body {
     background: #0077cc;
 }
 
-/* ...existing code... */
+// ...existing code...
 
-/* Адаптация для планшетов */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    min-height: 70px;
+}
+
+.site-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 24px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-btn {
+    font-size: 19px;
+    color: #0f97ff;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 18px;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: #eaf6ff;
+}
+
 @media (max-width: 900px) {
-    .experience-row,
-    .services-list,
-    .steps-list,
-    .partner-list,
-    .contact-row {
+    .site-header {
         flex-direction: column;
-        gap: 32px;
-        align-items: center;
+        align-items: flex-start;
+        padding: 12px 10px;
+        min-height: 56px;
     }
-    .experience-info,
-    .experience-photo,
-    .service-item,
-    .step-card,
-    .partner-item,
-    .contact-info,
-    .contact-form {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
+    .site-title {
+        font-size: 26px;
+        margin: 0 0 8px 0;
     }
-    .reviews-slider {
-        max-width: 95vw;
+    .nav-left, .nav-right {
+        gap: 12px;
     }
 }
 
-/* Адаптация для телефонов */
 @media (max-width: 600px) {
-    .site-header,
-    .nav-left,
-    .nav-right {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+    .site-header {
+        position: static;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 6px;
+        min-height: 48px;
+    }
+    .nav-left, .nav-right {
+        display: none;
     }
     .site-title {
-        font-size: 28px;
+        font-size: 22px;
+        margin: 0;
+    }
+    /* Кнопка меню */
+    .menu-toggle {
+        display: block;
+        background: #0f97ff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 22px;
+        padding: 6px 14px;
+        cursor: pointer;
+    }
+}
+
+/* Красивая адаптация блоков и шрифтов */
+.site-block {
+    margin-top: 90px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 900px) {
+    .site-block {
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-block {
+        margin-top: 16px;
+        margin-bottom: 24px;
     }
     .block-title,
     .services-title,
@@ -653,34 +716,66 @@ body {
     .partner-title,
     .contact-title,
     .reviews-title {
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 18px;
     }
-    .experience-info,
-    .experience-photo,
+    .experience-text,
+    .services-subtitle,
+    .steps-subtitle,
+    .partner-subtitle,
+    .contact-subtitle,
+    .review-text {
+        font-size: 17px;
+        margin-bottom: 18px;
+        line-height: 1.7;
+    }
     .service-item,
     .step-card,
     .partner-item,
     .contact-info,
     .contact-form {
-        max-width: 100%;
-        padding: 16px;
-        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 18px;
+        font-size: 17px;
     }
-    .block-image,
-    .experience-photo img,
-    .review-photo {
-        width: 100%;
-        height: auto;
-        max-width: 320px;
+    .services-list,
+    .steps-list,
+    .partner-list,
+    .contact-row {
+        gap: 18px;
     }
-    .contact-btn {
-        font-size: 16px;
-        padding: 12px 0;
-    }
-    .reviews-arrows .arrow-img {
-        width: 32px;
-        height: 32px;
-    }
+}
+
+/* Увеличить расстояния между элементами на всех экранах */
+.services-list,
+.steps-list,
+.partner-list,
+.contact-row {
+    gap: 40px;
+}
+
+.service-item,
+.step-card,
+.partner-item,
+.contact-info,
+.contact-form {
+    margin-bottom: 28px;
+}
+
+.review-text {
+    margin-bottom: 28px;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.review-author {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.review-role {
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 /* ...existing code... */
